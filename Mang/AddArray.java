@@ -39,7 +39,5 @@ public class AddArray {
         }
         System.out.println();
         }
-
-//
     }
 }
