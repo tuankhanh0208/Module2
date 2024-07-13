@@ -54,7 +54,14 @@ public class QuadraticEquation {
         return (-b - Math.sqrt(delta)) / (2 * a);
     }
     public void display (){
-
+        double delta = getDiscriminant();
+        if(delta > 0){
+            System.out.println("Co 2 nghiem x1:" + getRoot1() +"va nghiem x2 =" + getRoot2());
+        } else if (delta == 0) {
+            System.out.println("Co 1 nghiem kep la x1=x2" + getRoot1());
+        }else {
+            System.out.println("Phuong trinh vo nghiem");
+        }
     }
 
     public static void main(String[] args) {
@@ -62,6 +69,7 @@ public class QuadraticEquation {
         double a=sc.nextDouble();
         double b=sc.nextDouble();
         double c=sc.nextDouble();
-
+        QuadraticEquation equation = new QuadraticEquation(a,b,c);
+        equation.display();
     }
 }
