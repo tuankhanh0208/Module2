@@ -1,4 +1,4 @@
-package KeThua;
+package community.Shape;
 
 public class Shape {
     private String color = "green";

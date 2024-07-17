@@ -1,6 +1,6 @@
-package Points;
+package community.Point_MoveablePoint;
 
-public class MovableMoint extends Point{
+public class MovableMoint extends Point {
     private float xSpeed =0.0f;
     private float ySpeed =0.0f;
 
@@ -39,8 +39,8 @@ public class MovableMoint extends Point{
     }
 
      public  MovableMoint move(){
-//         setX(getX()) += xSpeed;
-//         setX(getX()) += ySpeed;
+        setX(getX() + xSpeed);
+        setY(getY() + ySpeed);
          return this;
     }
 }

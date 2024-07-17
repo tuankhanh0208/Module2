@@ -1,4 +1,4 @@
-package Point;
+package community.Point2D_Point3D;
 
 public class Main {
     public static void main(String[] args) {

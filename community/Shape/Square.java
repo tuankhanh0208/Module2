@@ -1,6 +1,6 @@
-package KeThua;
+package community.Shape;
 
-public class Square extends Rectangle{
+public class Square extends Rectangle implements Resizeable, Colorable {
     private double side ;
     public Square(){}
     public Square(double side){
@@ -34,5 +34,13 @@ public class Square extends Rectangle{
                 + ", which is a subclass of "
                 + super.toString();
     }
+    @Override
+    public void resize(double percent) {
+        side += side*percent/100;
+    }
 
+    @Override
+    public void ToColor() {
+        System.out.println("Color all four sides..");
+    }
 }

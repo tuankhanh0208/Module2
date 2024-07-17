@@ -1,6 +1,6 @@
-package KeThua;
+package community.Shape;
 
-public class Rectangle extends Shape {
+public  class Rectangle extends Shape implements Resizeable {
     private double width =1.0;
     private double length =1.0;
     public Rectangle(){}
@@ -38,5 +38,11 @@ public class Rectangle extends Shape {
     @Override
     public String toString (){
         return  "A Rectangle with width = "+ this.width + "and length = "+ this.length + ", which is a subclass of " +super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        width += width * percent /100;
+        length += length*percent/100;
     }
 }

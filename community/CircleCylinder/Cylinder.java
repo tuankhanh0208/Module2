@@ -1,6 +1,6 @@
-package KeThua2;
+package community.CircleCylinder;
 
-public class Cylinder extends Circle{
+public class Cylinder extends Circle {
     private double height =1.0;
     private double volume = 1.0;
     public Cylinder(){}
