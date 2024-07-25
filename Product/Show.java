@@ -1,10 +1,11 @@
 package Product;
 
-import Product.VIew.Main;
+import Product.VIew.MainMenu;
+import Product.VIew.ProductMenu;
 
 public class Show {
     public static void main(String[] args) {
-        Main main  = new  Main();
-        main.showMainMenu();
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.selectMenu();
     }
 }

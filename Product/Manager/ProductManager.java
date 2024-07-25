@@ -3,7 +3,7 @@ package Product.Manager;
 import Product.Model.Product;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class ProductManager implements Manager<Product> {
     ArrayList<Product> listProduct = new ArrayList<>();
@@ -48,5 +48,21 @@ public class ProductManager implements Manager<Product> {
     @Override
     public ArrayList<Product> findAll() {
         return listProduct;
+    }
+
+
+    public ArrayList<Product> findByName(String name) {
+        ArrayList<Product> listShearch = new ArrayList<>();
+        for (Product item : listProduct){
+            if(item.getName().toLowerCase().contains(name.toLowerCase())){
+                listShearch.add(item);
+            }
+        }
+        return listShearch;
+    }
+
+
+    public void findOverPrice(double minPrice, double maxPrice) {
+
     }
 }

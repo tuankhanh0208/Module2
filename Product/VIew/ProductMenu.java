@@ -6,7 +6,7 @@ import Product.Model.Product;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class ProductMenu {
 
         ProductManager productManager = new ProductManager();
         Scanner sc = new Scanner(System.in);
@@ -22,6 +22,7 @@ public class Main {
             System.out.println("4.Tìm kiếm sản phẩm");
             System.out.println("5.Hiển thị danh sách sản phảm");
               System.out.println("6.Tìm kiếm sản phẩm theo tên");
+              System.out.println("7.Tìm theo teen gần đúng");
             System.out.println("0.Thoát\n");
             System.out.println("Mời bạn nhập lựa chọn");
             choice= sc.nextInt();
@@ -44,6 +45,9 @@ public class Main {
                 case 6:
                     showShearchByName();
                     break;
+                case 7:
+                    showShearchNameCounts();
+                    break;
                 case 0:
                     System.out.println("-----THOÁT------");
                     break;
@@ -52,11 +56,20 @@ public class Main {
         }while (choice !=0);
 }
 
+    private void showShearchNameCounts() {
+        System.out.println("Nhap vao ten can tim kiem");
+        String name = scString.nextLine();
+        System.out.println("Ket qua tim kiem la");
+        productManager.findByName(name);
+    }
+
     private void showShearchByName() {
+            ArrayList<Product> listProduct = new ArrayList<>();
         System.out.println("Nhap ten can tim kiem");
         String name = scString.nextLine();
-        System.out.println("Ket qua la");
-        productManager.findProductByName(name);
+        for (int i = 0; i <listProduct.size() ; i++) {
+        System.out.println(i +1 + " " + productManager.findByName(name));
+        }
     }
 
     private void showAll() {

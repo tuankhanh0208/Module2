@@ -9,4 +9,5 @@ public interface Manager<E> {
     void update(int id,E e);
     void findProductByName(String name);
     ArrayList<E> findAll();
+
 }
