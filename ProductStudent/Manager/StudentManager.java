@@ -42,11 +42,21 @@ public class StudentManager implements IManager<Student> {
         } return listSearch;
     }
 
-    public void findByScore(double from , double to){
-
+    public ArrayList<Student> findByScore(double from , double to){
+        ArrayList <Student> listSearch = new ArrayList<>();
+        for (Student student : listStudent) {
+            if(student.getScore() >=from && student.getScore() <=to){
+                listSearch.add(student);
+            }
+        }return listSearch;
     }
-    public void findByAge(double from , double to){
-
+    public ArrayList<Student> findByAge(double from , double to){
+        ArrayList <Student> listSearch = new ArrayList<>();
+        for (Student student : listStudent){
+            if(student.getAge() >= from && student.getAge() <= to){
+                listSearch.add(student);
+            }
+        }return listSearch;
     }
     @Override
     public ArrayList<Student> fillAll() {

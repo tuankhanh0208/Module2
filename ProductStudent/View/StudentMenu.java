@@ -66,9 +66,26 @@ public class StudentMenu {
     }
 
     private void showFindAge() {
+        System.out.println("Nhap vao gia tri min");
+        double from = sc.nextDouble();
+        System.out.println("Nhap vao gia tri max");
+        double to = sc.nextDouble();
+        ArrayList<Student> list  = studentManager.findByAge(from,to);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println((i+1) + " " + list.get(i));
+        }
     }
 
     private void showFindByScore() {
+        System.out.println("Nhap vao gia tri min");
+        double from = sc.nextDouble();
+        System.out.println("Nhap vao gia tri max");
+        double to = sc.nextDouble();
+        ArrayList<Student> list  = studentManager.findByScore(from,to);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println((i+1) + " " + list.get(i));
+        }
+
     }
 
     private void showFindByName() {
@@ -107,7 +124,7 @@ public class StudentMenu {
         System.out.println("Nhập vào tuổi của sinh viên");
         int age = sc.nextInt();
         System.out.println("Nhập vào điểm của sinh viên");
-        double score = sc.nextInt();
+        double score = sc.nextDouble();
         Student students = new Student(name,age,score);
         studentManager.add(students);
         System.out.println("Thêm thành công");
