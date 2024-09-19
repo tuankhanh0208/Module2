@@ -1,18 +1,29 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 
 public class index {
-    public static void main(String[] args) {
-        int[] a = {1,9,3,2};
-        for(int i=0;i<a.length-1;i++){
-            for(int j=i+1;j<a.length;j++){
-                if(a[i] > a[j]){
-                    int x = a[i];
-                    a[i] = a[j];
-                    a[j] = x;
-                }
-            System.out.println(a);
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        String[] tokens = input.split(" ");
+
+        // Try to sum numbers; if fails, concatenate the strings
+        try {
+            int sum = 0;
+            for (String token : tokens) {
+                sum += Integer.parseInt(token);
             }
+            System.out.println(sum);
+        } catch (NumberFormatException e) {
+            StringBuilder concatenatedString = new StringBuilder();
+            for (String token : tokens) {
+                concatenatedString.append(token);
+            }
+            System.out.println(concatenatedString.toString());
         }
     }
-
 }
