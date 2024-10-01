@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Collection/Collection.iml" filepath="$PROJECT_DIR$/Collection/Collection.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hotel/Hotel.iml" filepath="$PROJECT_DIR$/Hotel/Hotel.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Map/Map.iml" filepath="$PROJECT_DIR$/Map/Map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/APJ-EXAM_C06_TranMaiTuanKhanh/APJ-EXAM_C06_TranMaiTuanKhanh.iml" filepath="$PROJECT_DIR$/APJ-EXAM_C06_TranMaiTuanKhanh/APJ-EXAM_C06_TranMaiTuanKhanh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/collection/Collection.iml" filepath="$PROJECT_DIR$/collection/Collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Module2.iml" filepath="$PROJECT_DIR$/.idea/Module2.iml" />
       <module fileurl="file://$PROJECT_DIR$/StackAndQueue/StackAndQueue.iml" filepath="$PROJECT_DIR$/StackAndQueue/StackAndQueue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotel/hotel.iml" filepath="$PROJECT_DIR$/hotel/hotel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/map/map.iml" filepath="$PROJECT_DIR$/map/map.iml" />
     </modules>
   </component>
 </project>
