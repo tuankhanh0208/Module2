@@ -1,12 +1,14 @@
 package OOP;
 
-public class student {
+import java.util.Scanner;
+
+public class Student {
     private String name;
     private int age;
     private int [] arr;
-    public student(){
+    public Student(){
     }
-    public student(String name , int age, int [] arr){
+    public Student (String name , int age, int [] arr){
         this.name=name;
         this.age=age;
         this.arr = arr;
@@ -45,11 +47,11 @@ public class student {
 
     public static void main(String[] args) {
         int [] arr1 = {2,4,6,8};
-        student st1 = new student("Tuan Khanh" ,20,arr1);
+        Student st1 = new Student("Tuan Khanh" ,20,arr1);
         st1.display();
         System.out.println("\n");
         int [] arr2 = {1,3,5,7};
-        student st2 = new student("Thu Thao" ,21,arr2);
+        Student st2 = new Student("Thu Thao" ,21,arr2);
         st2.display();
         System.out.println("\n");
         if(st1.averger() > st2.averger()){

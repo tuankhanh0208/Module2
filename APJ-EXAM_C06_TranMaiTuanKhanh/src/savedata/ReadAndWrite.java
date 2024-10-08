@@ -9,7 +9,7 @@ import java.util.List;
 public class ReadAndWrite {
     private File file = new File("C:\\CodeGym\\Module2\\APJ-EXAM_C06_TranMaiTuanKhanh\\Data\\directory.csv");
     public void writetoFileDirectory(List<Directory> directories) {
-        try (FileWriter fw = new FileWriter(this.file, true);
+        try (FileWriter fw = new FileWriter(this.file,true);
              BufferedWriter bw = new BufferedWriter(fw)) {
 
             for (Directory directory : directories) {
