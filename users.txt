@@ -1,2 +1,0 @@
-admin,123,0972114634,Gia Lai,tk020803@gmail.com,Khanh,20
-admin,123,123,ad,ádsda,2,20

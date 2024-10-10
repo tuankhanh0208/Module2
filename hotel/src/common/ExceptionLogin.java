@@ -26,10 +26,7 @@ public class ExceptionLogin {
             System.out.println(e.getMessage());
         }
     }
-    private static String currentuserName;
-    private static String currentName;
-    private static int currentAge;
-    private static String  currentPhone;
+
 
 
     public static boolean readFromFile(String userName , String passWord) {

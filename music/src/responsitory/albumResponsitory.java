@@ -1,6 +1,20 @@
 package responsitory;
 
-import model.album;
+import data.readAndWrite;
+import model.Album;
 
-public class albumResponsitory implements IAlbumReponsitory<album>{
+import java.util.List;
+import java.util.ArrayList;
+
+public class albumResponsitory implements IAlbumReponsitory<Album>{
+    private List<Album> list ;
+    readAndWrite readAndWrites = new readAndWrite();
+    public albumResponsitory(){
+        this.list = this.readAndWrites.readAlbums();
+    }
+    @Override
+    public void addAlbums(Album albums) {
+        this.list.add(albums);
+
+    }
 }

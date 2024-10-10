@@ -1,4 +1,4 @@
-package manager;
+package controller;
 
 import model.Directory;
 import savedata.ReadAndWrite;

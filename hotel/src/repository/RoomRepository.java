@@ -1,7 +1,6 @@
 package repository;
 
-import common.ExceptionHandler;
-import common.ExceptionRoom;
+import data.DataRoom;
 import model.Room;
 
 import java.time.LocalDate;
@@ -46,7 +45,7 @@ public class RoomRepository implements IRoomResponsitory<Room> {
     @Override
     public ArrayList<Room> searchByPrice(double from , double to) {
         ArrayList<Room> filteredRooms = new ArrayList<>();
-        List<Room> allRooms = ExceptionRoom.readRoomsFromFile();
+        List<Room> allRooms = DataRoom.readRoomsFromFile();
         for (Room room : allRooms) {
             if (room.getPrice() >= from && room.getPrice() <= to) {
                 filteredRooms.add(room);
@@ -58,7 +57,7 @@ public class RoomRepository implements IRoomResponsitory<Room> {
     @Override
     public void checkRooms(String nameRoom, LocalDate startDate, LocalDate endDate) {
 //        ArrayList<Room> roomArrayList = new ArrayList<>();
-        List<Room> roomList1 = ExceptionRoom.readRoomsFromFile();
+        List<Room> roomList1 = DataRoom.readRoomsFromFile();
         boolean isAvailable =true;
         for (Room room : roomList1){
            if (room.getNameRoom().equalsIgnoreCase(nameRoom)){

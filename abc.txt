@@ -1,5 +1,0 @@
-DemergingQueue{name='Khanh', gender='Female', birthday='2003-02-08'}
-DemergingQueue{name='Trang', gender='Female', birthday='2003-02-08'}
-DemergingQueue{name='Vo Yeu', gender='Female', birthday='2003-02-08'}
-DemergingQueue{name='Thao', gender='Male', birthday='2003-02-08'}
-DemergingQueue{name='Be', gender='Male', birthday='2003-02-08'}

@@ -1,4 +1,4 @@
-package manager;
+package controller;
 
 import model.Room;
 import service.IRoomService;

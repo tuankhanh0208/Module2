@@ -1,4 +1,4 @@
-package common;
+package data;
 
 import model.Room;
 
@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExceptionRoom {
+public class DataRoom {
     public static void writetoFileRoom(int idRoom , String nameRoom, int numberToilet, int numberBedRoom, double price , String status, LocalDate startDate, LocalDate endDate){
         try (FileWriter fw = new FileWriter("rooms.csv",true);
              BufferedWriter bw = new BufferedWriter(fw)){

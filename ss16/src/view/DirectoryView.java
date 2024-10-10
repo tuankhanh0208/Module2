@@ -1,7 +1,7 @@
 package view;
 
 import common.ExceptionHandler;
-import manager.DirectoryManager;
+import controller.DirectoryManager;
 import model.Directory;
 
 import java.time.LocalDate;

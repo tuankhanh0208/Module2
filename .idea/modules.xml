@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/APJ-EXAM_C06_TranMaiTuanKhanh/APJ-EXAM_C06_TranMaiTuanKhanh.iml" filepath="$PROJECT_DIR$/APJ-EXAM_C06_TranMaiTuanKhanh/APJ-EXAM_C06_TranMaiTuanKhanh.iml" />
       <module fileurl="file://$PROJECT_DIR$/collection/Collection.iml" filepath="$PROJECT_DIR$/collection/Collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Module2.iml" filepath="$PROJECT_DIR$/.idea/Module2.iml" />
       <module fileurl="file://$PROJECT_DIR$/StackAndQueue/StackAndQueue.iml" filepath="$PROJECT_DIR$/StackAndQueue/StackAndQueue.iml" />
@@ -11,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/music/music.iml" filepath="$PROJECT_DIR$/music/music.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss13/ss13.iml" filepath="$PROJECT_DIR$/ss13/ss13.iml" />
       <module fileurl="file://$PROJECT_DIR$/ss14/ss14.iml" filepath="$PROJECT_DIR$/ss14/ss14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss16/ss16.iml" filepath="$PROJECT_DIR$/ss16/ss16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss17/ss17.iml" filepath="$PROJECT_DIR$/ss17/ss17.iml" />
     </modules>
   </component>
 </project>

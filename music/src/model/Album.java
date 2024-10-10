@@ -2,13 +2,13 @@ package model;
 
 import java.time.LocalDate;
 
-public class album {
+public class Album {
     private String albumID ;
     private String nameAlbum;
     private LocalDate dateCreated;
-    public album (){}
+    public Album(){}
 
-    public album(String albumID, String nameAlbum, LocalDate dateCreated) {
+    public Album(String albumID, String nameAlbum, LocalDate dateCreated) {
         this.albumID = albumID;
         this.nameAlbum = nameAlbum;
         this.dateCreated = dateCreated;

@@ -1,6 +1,4 @@
-package manager;
-
-import model.Directory;
+package controller;
 
 import java.util.List;
 

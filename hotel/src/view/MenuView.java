@@ -1,11 +1,11 @@
 package view;
 
-import common.ExceptionBill;
+import data.DataBill;
 import common.ExceptionHandler;
 import common.ExceptionLogin;
-import common.ExceptionRoom;
-import manager.BillController;
-import manager.RoomController;
+import data.DataRoom;
+import controller.BillController;
+import controller.RoomController;
 import model.Bill;
 import model.Room;
 
@@ -98,7 +98,7 @@ public class MenuView {
         System.out.println("Tổng doanh thu cho tháng " + month + "/" + year + " là: " + totalRevenue);
     }
     private void showAllBills() {
-        List<Bill> billsList = ExceptionBill.readBillsFromFile();
+        List<Bill> billsList = DataBill.readBillsFromFile();
         if (billsList.isEmpty()) {
             System.out.println("Không có hóa đơn nào trong hệ thống.");
         } else {
@@ -125,7 +125,7 @@ public class MenuView {
         double totalPrice = ExceptionHandler.checkParseDouble();
         Bill bills = new Bill(idIndex,nameRoom,tenantName,employeeName,startDate,endDate,totalPrice);
         this.billController.update(idIndex, bills);
-        ExceptionBill.editBillInFile(idIndex,bills);
+        DataBill.editBillInFile(idIndex,bills);
         System.out.println("ĐÃ SỬA THÀNH CÔNG");
     }
 
@@ -147,7 +147,7 @@ public class MenuView {
         double totalPrice = ExceptionHandler.checkParseDouble();
         Bill bills = new Bill(id,nameRoom,tenantName,employeeName,startDate,endDate,totalPrice);
         this.billController.addBills(bills);
-        ExceptionBill.wriyetoFileBill(id,nameRoom,tenantName,employeeName,startDate,endDate,totalPrice);
+        DataBill.wriyetoFileBill(id,nameRoom,tenantName,employeeName,startDate,endDate,totalPrice);
     }
 
     private void showAllRoom() {
@@ -228,12 +228,12 @@ public class MenuView {
         LocalDate endDate = ExceptionHandler.checkParseLocaDate();
         Room room = new Room(idIndex, nameRoom, numberToilet, numberBedRoom, price, status,startDate,endDate);
         this.roomController.update(idIndex, room);
-        ExceptionRoom.editRoomInFile(idIndex,room);
+        DataRoom.editRoomInFile(idIndex,room);
         System.out.println("ĐÃ SỬA THÀNH CÔNG");
     }
 
     private void showAllRooms() {
-        List<Room> roomList = ExceptionRoom.readRoomsFromFile();
+        List<Room> roomList = DataRoom.readRoomsFromFile();
         if (roomList.isEmpty()) {
             System.out.println("Không có phòng nào trong hệ thống.");
         } else {
@@ -262,7 +262,7 @@ public class MenuView {
         LocalDate endDate = ExceptionHandler.checkParseLocaDate();
         Room room = new Room(idRoom,nameRoom,numberToilet,numberBedRoom,price,status,startDate,endDate);
          this.roomController.addRoom(room);
-        ExceptionRoom.writetoFileRoom(idRoom,nameRoom, numberToilet, numberBedRoom, price, status,startDate,endDate);
+        DataRoom.writetoFileRoom(idRoom,nameRoom, numberToilet, numberBedRoom, price, status,startDate,endDate);
         System.out.println("Phòng đã được thêm thành công!");
     }
 }
