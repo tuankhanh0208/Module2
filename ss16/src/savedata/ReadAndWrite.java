@@ -8,8 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 public class ReadAndWrite {
     private File file = new File("C:\\CodeGym\\Module2\\ss16\\Data\\directory.csv");
-    public void writetoFileDirectory(List<Directory> directories) {
-        try (FileWriter fw = new FileWriter(this.file,true);
+    private File file1 = new File("Data/contacts.csv");
+    public void writetoFileDirectory(List<Directory> directories ,boolean append) {
+        try (FileWriter fw = new FileWriter(this.file1,append);
              BufferedWriter bw = new BufferedWriter(fw)) {
 
             for (Directory directory : directories) {
@@ -27,7 +28,7 @@ public class ReadAndWrite {
     public List<Directory> readDirectoryFromFile() {
         List<Directory> directoryList = new ArrayList<>();
 
-        try (FileReader fr = new FileReader(this.file);
+        try (FileReader fr = new FileReader(this.file1);
              BufferedReader br = new BufferedReader(fr)) {
 
             String line;

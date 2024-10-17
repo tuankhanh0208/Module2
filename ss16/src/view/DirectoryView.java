@@ -12,57 +12,59 @@ import java.util.Scanner;
 
 public class DirectoryView {
     private static Scanner sc = new Scanner(System.in);
-    private static Scanner  scString = new Scanner(System.in);
+    private static Scanner scString = new Scanner(System.in);
     private DirectoryManager directoryManager = new DirectoryManager();
     int choice;
-    public void renderMenu(){
+
+    public void renderMenu() {
         showMenu();
     }
-    public void showMenu(){
+
+    public void showMenu() {
         do {
 
-        System.out.println("----CHƯƠNG TRÌNH QUẢN LÍ DANH BẠ----");
-        System.out.println("Chọn chức năng theo số(để tiếp tục) :");
-        System.out.println("1.Xem danh sách");
-        System.out.println("2.Thêm mới");
-        System.out.println("3.Cập nhập");
-        System.out.println("4.Xóa");
-        System.out.println("5.Tìm kiếm");
-        System.out.println("6.Đọc từ file");
-        System.out.println("7.Ghi vào file");
-        System.out.println("8.Thoát");
-        System.out.println("Chọn chức năng : ");
-        choice = ExceptionHandler.checkParseInt();
+            System.out.println("----CHƯƠNG TRÌNH QUẢN LÍ DANH BẠ----");
+            System.out.println("Chọn chức năng theo số(để tiếp tục) :");
+            System.out.println("1.Xem danh sách");
+            System.out.println("2.Thêm mới");
+            System.out.println("3.Cập nhập");
+            System.out.println("4.Xóa");
+            System.out.println("5.Tìm kiếm");
+            System.out.println("6.Đọc từ file");
+            System.out.println("7.Ghi vào file");
+            System.out.println("8.Thoát");
+            System.out.println("Chọn chức năng : ");
+            choice = ExceptionHandler.checkParseInt();
 
-        switch (choice){
-            case 1:
-                showDisplay();
-                break;
-            case 2:
-                showAddDirectory();
-                break;
-            case 3:
-                showEditDirectory();
-                break;
-            case 4:
-                showRemoveDirectory();
-                break;
-            case 5:
-                showSearchDirectory();
-                break;
-            case 6:
-                showReadToFile();
-                break;
-            case 7:
-                showWriteToFile();
-                break;
-            case 8:
-                System.out.println("=======THOÁT========");
-                break;
-            default:
-                System.out.println("Mời bạn nhập lại");
-        }
-        }while (choice != 8);
+            switch (choice) {
+                case 1:
+                    showDisplay();
+                    break;
+                case 2:
+                    showAddDirectory();
+                    break;
+                case 3:
+                    showEditDirectory();
+                    break;
+                case 4:
+                    showRemoveDirectory();
+                    break;
+                case 5:
+                    showSearchDirectory();
+                    break;
+                case 6:
+                    showReadToFile();
+                    break;
+                case 7:
+                    showWriteToFile();
+                    break;
+                case 8:
+                    System.out.println("=======THOÁT========");
+                    break;
+                default:
+                    System.out.println("Mời bạn nhập lại");
+            }
+        } while (choice != 8);
     }
 
     private void showWriteToFile() {
@@ -79,11 +81,21 @@ public class DirectoryView {
         System.out.println("====ĐỌC TỪ FILE====");
         if (true) {
             directoryManager.reloadDirectory();
-            System.out.println("Cập nhật danh bạ từ file thành công.");
+
+            List<Directory> directories = directoryManager.getAll();
+            if (!directories.isEmpty()) {
+                System.out.println("Danh sách hiện tại:");
+                for (Directory directory : directories) {
+                    System.out.println(directory);
+                }
+            } else {
+                System.out.println("Danh bạ rỗng hoặc không có dữ liệu từ file.");
+            }
         } else {
             System.out.println("Đọc từ file đã bị hủy.");
         }
     }
+
 
     private void showSearchDirectory() {
         do {
@@ -92,7 +104,7 @@ public class DirectoryView {
             System.out.println("2.Tìm theo họ tên :");
             int choice = ExceptionHandler.checkParseInt();
             List<Directory> directoryLists = new ArrayList<>();
-            switch (choice){
+            switch (choice) {
                 case 1:
                     System.out.println("Nhập số dđiện thoạt :");
                     String phoneNumber = scString.nextLine();
@@ -115,7 +127,7 @@ public class DirectoryView {
                     System.out.println(directory);
                 }
             }
-        }while (choice!=3);
+        } while (choice != 3);
     }
 
     private void showRemoveDirectory() {
@@ -128,8 +140,11 @@ public class DirectoryView {
                 System.out.println("Quay lại Menu chính.");
                 return;
             }
-            Directory directory = (Directory) directoryManager.searchDirectoryByPhone(phoneNumber);
-            if (directory != null) {
+
+            // Giả sử searchDirectoryByPhone trả về danh sách các kết quả
+            List<Directory> directories = directoryManager.searchDirectoryByPhone(phoneNumber);
+            if (directories != null && !directories.isEmpty()) {
+                Directory directory = directories.get(0); // Lấy đối tượng đầu tiên trong danh sách
                 System.out.println("Bạn có chắc muốn xóa danh bạ với số điện thoại " + phoneNumber + " không? (Nhập 'Y' để xác nhận): ");
                 String confirm = scString.nextLine();
                 if (confirm.equalsIgnoreCase("Y")) {
@@ -153,10 +168,10 @@ public class DirectoryView {
         do {
             System.out.println("Nhập số điện thoại  cần sửa :");
             phoneNumber = scString.nextLine();
-            if (phoneNumber.isEmpty() || !ExceptionHandler.isVaildPhoneNumber(phoneNumber)){
+            if (phoneNumber.isEmpty() || !ExceptionHandler.isVaildPhoneNumber(phoneNumber)) {
                 System.out.println("Số điện thoại không hợp lệ. Vui lòng nhập lại.");
             }
-        }while (phoneNumber.isEmpty() || !ExceptionHandler.isVaildPhoneNumber(phoneNumber));
+        } while (phoneNumber.isEmpty() || !ExceptionHandler.isVaildPhoneNumber(phoneNumber));
 
         String group;
         do {
@@ -225,10 +240,10 @@ public class DirectoryView {
         do {
             System.out.println("Nhập số điện thoại  :");
             phoneNumber = scString.nextLine();
-            if (phoneNumber.isEmpty() || !ExceptionHandler.isVaildPhoneNumber(phoneNumber)){
+            if (phoneNumber.isEmpty() || !ExceptionHandler.isVaildPhoneNumber(phoneNumber)) {
                 System.out.println("Số điện thoại không hợp lệ. Vui lòng nhập lại.");
             }
-        }while (phoneNumber.isEmpty() || !ExceptionHandler.isVaildPhoneNumber(phoneNumber));
+        } while (phoneNumber.isEmpty() || !ExceptionHandler.isVaildPhoneNumber(phoneNumber));
 
         String group;
         do {
@@ -299,15 +314,15 @@ public class DirectoryView {
             System.out.println("Danh sách danh bạ trống.");
         } else {
             int total = directories.size();
-            int count =0;
-            for (Directory directory : directories){
+            int count = 0;
+            for (Directory directory : directories) {
                 System.out.println("Số điện thoại: " + directory.getPhoneNumber());
                 System.out.println("Nhóm: " + directory.getGroup());
                 System.out.println("Họ tên: " + directory.getFullName());
                 System.out.println("Giới tính: " + directory.getGender());
                 System.out.println("Địa chỉ: " + directory.getAddress());
                 count++;
-                if (count % 5 == 0 && count < total){
+                if (count % 5 == 0 && count < total) {
                     System.out.println("Nhấn enter để tiếp tục...");
                     scString.nextLine();
                 }

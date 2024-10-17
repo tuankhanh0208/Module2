@@ -17,7 +17,7 @@ public class DirectoryManager implements IDirectory<Directory> {
     @Override
     public void add(Directory directory) {
         this.directories.add(directory);
-        readAndWrite.writetoFileDirectory(this.directories);
+        readAndWrite.writetoFileDirectory(this.directories,true);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class DirectoryManager implements IDirectory<Directory> {
             if (directories.get(i).getPhoneNumber().equals(phoneNumber)) {
                 directories.remove(i);
                 saveDirectoryToFile();
-                System.out.println("Xóa danh bạ thành công.");
+//                System.out.println("Xóa danh bạ thành công.");
                 return;
             }
         }
@@ -68,7 +68,7 @@ public class DirectoryManager implements IDirectory<Directory> {
         this.directories = readAndWrite.readDirectoryFromFile();
     }
     public void saveDirectoryToFile () {
-       readAndWrite.writetoFileDirectory(directories);
+       readAndWrite.writetoFileDirectory(directories,false);
    }
     @Override
     public List<Directory> getAll() {
